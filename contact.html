@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Website - Contact</title>
+</head>
+<body>
+
+<a href="#main-content">Skip to main content</a>
+
+<header>
+    <h1>Contact Us</h1>
+</header>
+
+<nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+</nav>
+
+<main id="main-content">
+    <h2>Contact Form</h2>
+
+    <form id="contactForm" aria-label="Contact form">
+        <fieldset>
+            <legend>Your Details</legend>
+
+            <label for="name">Full Name *</label>
+            <input type="text" id="name" name="name" required>
+
+            <br><br>
+
+            <label for="email">Email *</label>
+            <input type="email" id="email" name="email" required>
+
+            <br><br>
+
+            <label for="phone">Phone (optional)</label>
+            <input type="tel" id="phone" name="phone"
+                   pattern="[0-9]{10}"
+                   aria-describedby="phone-help">
+
+            <p id="phone-help">
+                Enter 10 digits without spaces (example: 0712345678).
+            </p>
+        </fieldset>
+
+        <br>
+        <fieldset>
+            <legend>Your Message</legend>
+
+            <label for="subject">Subject *</label>
+            <input type="text" id="subject" name="subject" required>
+
+            <br><br>
+
+            <label for="message">Message *</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+        </fieldset>
+
+        <br>
+        <fieldset>
+            <legend>How did you hear about us?</legend>
+
+            <input type="radio" id="social" name="source" value="social" required>
+            <label for="social">Social Media</label>
+
+            <br>
+
+            <input type="radio" id="friend" name="source" value="friend">
+            <label for="friend">Friend</label>
+
+            <br>
+
+            <input type="radio" id="search" name="source" value="search">
+            <label for="search">Search Engine</label>
+        </fieldset>
+
+        <br>
+        <br>
+        <fieldset>
+         <legend>Additional Info</legend>
+
+    <label for="dob">Date of Birth *</label>
+    <input type="date" id="dob">
+
+    <br><br>
+    <label for="age">Your Age*</label>
+    <input type="number" id="age">
+
+    <br><br>
+
+    <label for="website">Website *</label>
+    <input type="url" id="website">
+
+    <br><br>
+
+    <label for="fileUpload">Upload File *</label>
+    <input type="file" id="fileUpload">
+
+    <br><br>
+
+    <label for="favColor">Favorite Color *</label>
+    <input type="color" id="favColor">
+
+</fieldset>
+
+        <button type="submit">Submit</button>
+
+    </form>
+
+    <table border="1">
+    <caption>Messages Received</caption>
+
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Message</th>
+            <th scope="col">Date</th>
+            <th scope="col">Priority</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <td>1</td>
+            <td rowspan="2">Alice</td>
+            <td rowspan="2">
+                <a href="mailto:alice@gmail.com">alice@gmail.com</a>
+            </td>
+            <td>Hey! Just finished Lab 1!</td>
+            <td>01.01.2026</td>
+            <td><input type="checkbox" checked></td>
+        </tr>
+
+        <tr>
+            <td>2</td>
+            <td>Hey, how’s it going?</td>
+            <td>09.02.2026</td>
+            <td><input type="checkbox"></td>
+        </tr>
+
+        <tr>
+            <td>3</td>
+            <td rowspan="2">Bob</td>
+            <td rowspan="2">
+                <a href="mailto:bob@e-uvt.ro">bob@e-uvt.ro</a>
+            </td>
+            <td>Do you know the deadline for Lab 3?</td>
+            <td>09.02.2026</td>
+            <td><input type="checkbox" checked></td>
+        </tr>
+
+        <tr>
+            <td>4</td>
+            <td>Can someone share the example solution for Lab 2?</td>
+            <td>21.02.2026</td>
+            <td><input type="checkbox"></td>
+        </tr>
+
+    </tbody>
+</table>
+
+    <p><a href="index.html">Back to Home</a></p>
+
+</main>
+
+<footer>
+    <p>This is my website footer.</p>
+</footer>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function (e) {
+
+    const fullname = document.getElementById("name").value.trim();
+    const namePattern = /^[A-Za-z\s]+$/;
+
+    if (fullname.length < 5) {
+        alert("Full name must contain at least 5 characters.");
+        e.preventDefault();
+        return;
+    }
+
+    if (!namePattern.test(fullname)) {
+        alert("Full name must contain only letters and spaces.");
+        e.preventDefault();
+        return;
+    }
+
+    const email = document.getElementById("email").value.trim();
+    const emailPattern = /^[a-zA-Z0-9._%+-]+@e-uvt\.ro$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Email must be valid and end with @e-uvt.ro");
+        e.preventDefault();
+        return;
+    }
+
+    const phone = document.getElementById("phone").value.trim();
+    const phonePattern = /^[0-9]{10}$/;
+
+    if (phone !== "" && !phonePattern.test(phone)) {
+        alert("Phone must contain exactly 10 digits.");
+        e.preventDefault();
+        return;
+    }
+
+    const subject = document.getElementById("subject").value.trim();
+    if (subject === "") {
+        alert("Subject is required.");
+        e.preventDefault();
+        return;
+    }
+
+    const message = document.getElementById("message").value.trim();
+    if (message === "") {
+        alert("Message cannot be empty.");
+        e.preventDefault();
+        return;
+    }
+
+    const radios = document.querySelectorAll('input[name="source"]');
+    let radioSelected = false;
+    radios.forEach(r => {
+        if (r.checked) radioSelected = true;
+    });
+
+    if (!radioSelected) {
+        alert("Please select how you heard about us.");
+        e.preventDefault();
+        return;
+    }
+
+    // DOB validation (18+)
+    const dob = document.getElementById("dob").value;
+    if (dob === "") {
+        alert("Date of Birth is required.");
+        e.preventDefault();
+        return;
+    }
+
+    const dobDate = new Date(dob);
+    const today = new Date();
+    let age = today.getFullYear() - dobDate.getFullYear();
+    const m = today.getMonth() - dobDate.getMonth();
+
+    if (m < 0 || (m === 0 && today.getDate() < dobDate.getDate())) {
+        age--;
+    }
+
+    if (age < 18) {
+        alert("You must be at least 18 years old.");
+        e.preventDefault();
+        return;
+    }
+
+    // Age input validation (18–60)
+    const ageInput = document.getElementById("age").value;
+    if (ageInput < 18 || ageInput > 60) {
+        alert("Age must be between 18 and 60.");
+        e.preventDefault();
+        return;
+    }
+
+    // Website validation
+    const website = document.getElementById("website").value.trim();
+    if (!website.startsWith("https://")) {
+        alert("Website must start with https://");
+        e.preventDefault();
+        return;
+    }
+
+    // File validation
+    const fileInput = document.getElementById("fileUpload");
+    const file = fileInput.files[0];
+
+    if (!file) {
+        alert("File upload is required.");
+        e.preventDefault();
+        return;
+    }
+
+    const allowedTypes = ["application/pdf", 
+        "application/vnd.openxmlformats-officedocument.wordprocessingml.document"];
+
+    if (!allowedTypes.includes(file.type)) {
+        alert("Only PDF or DOCX files are allowed.");
+        e.preventDefault();
+        return;
+    }
+
+    if (file.size > 2 * 1024 * 1024) {
+        alert("File size must not exceed 2MB.");
+        e.preventDefault();
+        return;
+    }
+
+    // Color validation
+    const color = document.getElementById("favColor").value;
+    if (!color) {
+        alert("Please select a color.");
+        e.preventDefault();
+        return;
+    }
+
+    // Final confirmation
+    if (!confirm("Are you sure you want to submit the form?")) {
+        e.preventDefault();
+    }
+
+});
+
+</script>
+</body>
+</html>

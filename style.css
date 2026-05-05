@@ -1,0 +1,52 @@
+h1 {
+    color: blue;
+    font-style: italic;
+    padding: 10px;
+}
+
+h1 {
+    color: red;
+}
+
+
+.skills-table {
+    border-collapse: collapse;
+    width: 600px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+
+.skills-table td {
+    padding: 12px;
+}
+
+
+.skills-table .category {
+    background: linear-gradient(to bottom, #6a11cb, #8e44ad);
+    color: white;
+    font-weight: bold;
+    width: 150px;
+}
+
+
+.skills-table tr:nth-child(even) td:not(.category) {
+    background-color: #f0f0f5;
+}
+
+.skills-table tr:nth-child(odd) td:not(.category) {
+    background-color: #e0e0ea;
+}
+
+
+.highlight-green {
+    background-color: #c8f7c5;
+    font-weight: bold;
+}
+
+.highlight-red {
+    background-color: #f7c5c5;
+    font-weight: bold;
+}

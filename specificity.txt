@@ -1,0 +1,59 @@
+Paragraph A:
+This paragraph only matches the element selector (p), so it uses all the default styles defined there:
+- gray color
+- font size 1rem
+- Georgia font
+- line height 1.4
+- small vertical padding
+
+Paragraph B:
+This paragraph matches both p and the class .info.
+Since a class selector is more specific than an element selector, the styles from .info override the ones from p.
+So it gets:
+- steelblue color
+- bigger font size (1.25rem)
+- light blue background
+- more padding
+- left border
+- Arial font
+
+Paragraph C:
+This paragraph matches p and the id #warning.
+The id selector is more specific than both element and class selectors, so its styles take priority.
+It gets:
+- dark red color
+- smaller font
+- italic text
+- uppercase letters
+- spaced letters
+- dashed border
+- light red background
+- Courier New font
+
+Paragraph D:
+This one matches all selectors: p, .info, #warning, and #warning.info.
+
+The most specific selector is #warning.info (because it combines id + class), so it overrides everything else.
+
+Final result:
+- color becomes dark orange
+- background becomes light orange
+- border becomes solid orange
+- font size becomes 1.1rem
+- normal (not italic) text
+- smaller letter spacing
+
+Font-family:
+The font-family is not defined in #warning.info, so the browser takes it from the next most specific rule, which is #warning.
+So the font remains Courier New.
+
+
+External vs Internal CSS (h1 test):
+
+First, the external CSS (style.css) is applied.
+After that, the internal CSS (inside the <style> tag) is applied.
+
+Since internal CSS has higher priority, it overrides the external one.
+
+So even if the external file sets one color, the internal CSS changes it.
+That’s why the final color of the h1 is the one defined inside the HTML file.

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <title>Simple Website</title>
+</head>
+<body>
+
+<a href="#main-content">Skip to main content</a>
+
+<header>
+    <h1>Welcome to My Website</h1>
+</header>
+
+<nav aria-label="Main navigation">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="chatbot.html">Chatbot</a></li>
+    </ul>
+</nav>
+
+<main id="main-content">
+    <h2>Home Page</h2>
+    <p>This is the homepage.</p>
+    <p><a href="contact.html">Go to Contact Form</a></p>
+    <table border="1">
+    <h2 style="text-align:center;">Personal Skills</h2>
+    <table class="skills-table">
+    <tr>
+        <td class="category" rowspan="3">Programming</td>
+        <td>Python</td>
+        <td class="highlight-green">JavaScript</td>
+    </tr>
+    <tr>
+        <td>C/C++</td>
+        <td class="highlight-red">Java</td>
+    </tr>
+    <tr>
+        <td>Java</td>
+        <td>-</td>
+    </tr>
+
+    <tr>
+        <td class="category" rowspan="4">Design</td>
+        <td colspan="2">Figma</td>
+    </tr>
+    <tr><td colspan="2">Adobe XD</td></tr>
+    <tr><td colspan="2">Photoshop</td></tr>
+    <tr><td colspan="2">UI/UX</td></tr>
+
+    <tr>
+        <td class="category">Other</td>
+        <td colspan="2">Git</td>
+    </tr>
+</table>
+    <table border="1">
+    <caption>My Personal Projects Portfolio</caption>
+
+    <thead>
+        <tr>
+            <th scope="col">Project Name</th>
+            <th scope="col">Description</th>
+            <th scope="col">Technologies</th>
+            <th scope="col">Difficulty</th>
+            <th scope="col">Link</th>
+        </tr>
+    </thead>
+
+    <tbody>
+
+        <tr>
+            <th scope="row">EXERCISE 1</th>
+            <td>Exercise 1 of the web design course</td>
+
+            <td>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </td>
+
+            <td>
+                <select>
+                    <option>Low</option>
+                    <option selected>Medium</option>
+                    <option>High</option>
+                </select>
+            </td>
+
+            <td>
+                <a href="https://github.com/cristianINF/lab1-homepage" target="_blank">
+                    View Project
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">EXERCISE 2</th>
+            <td>Exercise 2 of the web design course</td>
+
+            <td>
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                </ul>
+            </td>
+
+            <td>
+                <select>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option selected>High</option>
+                </select>
+            </td>
+
+            <td>
+                <a href="https://github.com/cristianINF/lab2-homepage" target="_blank">
+                    View Project
+                </a>
+            </td>
+        </tr>
+
+        <tr>
+            <th scope="row">Future Project</th>
+            <td colspan="4">More projects coming soon.</td>
+        </tr>
+
+    </tbody>
+</table>
+</main>
+
+<footer>
+    <p>This is my website footer.</p>
+</footer>
+
+</body>
+</html>

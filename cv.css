@@ -1,0 +1,75 @@
+body {
+    font-family: Arial;
+    margin: 0;
+    background-color: #f5f5f5;
+}
+
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #6a11cb;
+    color: white;
+}
+
+
+nav {
+    text-align: center;
+    margin: 10px;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+
+section {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+
+.projects {
+    grid-column: span 2;
+}
+
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+
+.card {
+    background-color: #eaeaea;
+    padding: 15px;
+    border-radius: 10px;
+
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.special {
+    background-color: #6a11cb;
+    color: white;
+}
+
+
+.contact {
+    grid-column: span 2;
+}
+
+
+footer {
+    text-align: center;
+    padding: 10px;
+}
